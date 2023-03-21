@@ -12,26 +12,26 @@ fn main() {
     loop {
         print!("Please input your guess number\n");
 
-		let mut guess = String::new();
+        let mut guess = String::new();
 
-		io::stdin()
-			.read_line(&mut guess)
-			.expect("fail to read your number!");
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("fail to read your number!");
 
-		let guess: u32 = match guess.trim().parse() {
-			Ok(num) => num,
-			Err(_) => continue
-		};
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
-		print!("You guessed: {guess}\n");
+        print!("You guessed: {guess}\n");
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
-			Ordering::Greater => println!("Too big!"),
+            Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
-				println!("🎆 You win!");
-				break;
-			},
+                println!("🎆 You win!");
+                break;
+            }
         }
     }
 }
