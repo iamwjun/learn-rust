@@ -15,6 +15,24 @@ fn main() {
     let fib: usize = fibonacci(number);
 
     println!("the {number}th fibonacci number is {fib}");
+
+    let fib = fib2(50);
+
+    println!("the 50th fibonacci number is {fib}");
+}
+
+fn fib2(n: u32) -> u32 {
+    if n == 0 || n == 1 {
+        return n;
+    }
+    let mut a = 0;
+    let mut b = 1;
+    for _ in 2..=n {
+        let tmp = b;
+        b = (a + b) % 1000000007; // 对结果进行取模操作
+        a = tmp;
+    }
+    return b;
 }
 
 fn fibonacci(n: usize) -> usize {
