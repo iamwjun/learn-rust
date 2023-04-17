@@ -12,3 +12,11 @@ fn main() {
     let result = longest(string1.as_str(), string2);
     println!("The longest string is {}", result);
 }
+
+fn longest(x: &str, y: &str) -> &str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
