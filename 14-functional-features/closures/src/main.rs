@@ -1,3 +1,5 @@
+use std::{time::Duration, thread};
+
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum ShirtColor {
     Red,
@@ -34,13 +36,20 @@ impl Inventory {
 struct  Solution {}
 
 impl Solution {
-    pub fn fib(n: i32) -> i32 {
+    pub fn fib(&self, n: i32) -> i32 {
         match n {
-            1 | 2 => n,
-            _ => Solution::fib(n - 1) + Solution::fib(n - 2)
+            0 | 1 => n,
+            _ => self.fib(n - 1) + self.fib(n - 2)
         }
     }
 }
+
+fn fibonacci(n: u32) -> u32 {
+    match n {
+      1 | 2 => 1,
+      _ => fibonacci(n - 1) + fibonacci(n - 2),
+    }
+  }
 
 fn main() {
     let store = Inventory {
@@ -64,5 +73,15 @@ fn main() {
 
     let solution = Solution {};
     
-    println!("febo is {}", Solution::fib(5))
+    println!("fibonacci is {}", solution.fib(5));
+
+    println!("fibonacci is {}", fibonacci(6));
+
+    let expensive_closure = |num: u32| -> u32 {
+        println!("calculating slowly...");
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+
+    println!("expensive_closure {}", expensive_closure(6));
 }
