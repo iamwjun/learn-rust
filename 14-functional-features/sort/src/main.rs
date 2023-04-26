@@ -27,5 +27,5 @@ fn main() {
         r.width
     });
 
-    println!("list is {:#?}", list);
+    println!("{:#?}, sorted in {num_sort_operations} operations", list);
 }
