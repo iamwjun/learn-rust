@@ -1,11 +1,9 @@
 [package]
-name = "art"
+name = "my_guessing_game"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[registry]
-token = "cioO7qs9Ial5cI1kYH4FHF5tk0itxw0QCm7"   # Access token for crates.io
+rand = "0.8.5"
