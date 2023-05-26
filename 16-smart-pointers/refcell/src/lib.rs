@@ -55,6 +55,12 @@ use super::*;
 	impl Messenger for MockMessenger {
 		fn send(&self, message: &str) {
             self.sent_messages.borrow_mut().push(String::from(message));
+
+			// let mut one_borrow = self.sent_messages.borrow_mut();
+			// let mut tow_borrow = self.sent_messages.borrow_mut();
+
+            // one_borrow.push(String::from(message));
+			// tow_borrow.push(String::from(message));
         }
 	}
 
