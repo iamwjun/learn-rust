@@ -1,5 +1,5 @@
 [package]
-name = "unsafe-rust-02"
+name = "advanced-traits"
 version = "0.1.0"
 edition = "2021"
 
