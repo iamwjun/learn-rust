@@ -1,11 +1,4 @@
-use proc_macro;
-
-#[some_attribute]
-pub trait HelloMacro {
-    fn hello_world();
-}
-
-pub fn add(left: i32, right: i32) -> i32 {
+pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
