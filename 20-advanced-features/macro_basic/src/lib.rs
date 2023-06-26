@@ -1,5 +1,3 @@
-use proc_macro::TokenStream;
-
 #[macro_export]
 macro_rules! vec {
     ( $( $x:expr ),* ) => {

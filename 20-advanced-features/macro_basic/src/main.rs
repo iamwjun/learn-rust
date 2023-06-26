@@ -1,6 +1,5 @@
 use macro_basic::{vec, HelloMacro};
 
-#[derive(HelloMacro)]
 struct Pancakes;
 
 impl HelloMacro for Pancakes {
