@@ -83,3 +83,15 @@ impl Drop for ThreadPool {
 		}
 	}
 }
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	fn it_work() {
+		let pool: ThreadPool = ThreadPool::new(4);
+
+		assert_eq!(pool.workers.len(), 4)
+	}
+}
