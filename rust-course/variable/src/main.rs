@@ -32,4 +32,16 @@ fn main() {
     let m4 = 0b10000;
 
     println!("m is {} {} {} {}", m1, m2, m3, m4);
+
+    assert_eq!(100u8.saturating_add(1), 101);
+
+    println!("{}", 100u8.saturating_add(1));
+
+    assert_eq!(u8::MAX.saturating_add(127), u8::MAX);
+
+    println!("u8 MAX is {}", u8::MAX.saturating_add(127));
+
+    let a : u8 = 255;
+    let b = a.wrapping_add(20);
+    println!("{}", b);  // 19
 }
