@@ -20,5 +20,9 @@ fn main() {
         teams_map.insert(&team.0, team.1);
     }
 
-    println!("{:?}",teams_map)
+    println!("{:?}",teams_map);
+
+    let teams_map: HashMap<_,_> = teams_list.into_iter().collect();
+    
+    println!("{:?}",teams_map);
 }
