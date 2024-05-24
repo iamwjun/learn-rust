@@ -22,7 +22,16 @@ fn main() {
 
     println!("{:?}",teams_map);
 
-    let teams_map: HashMap<_,_> = teams_list.into_iter().collect();
+    let teams_map: HashMap<String, i32> = teams_list.into_iter().collect();
     
     println!("{:?}",teams_map);
+
+    let name = String::from("Sunface");
+    let age = 18;
+
+    let mut handsome_boys = HashMap::new();
+    handsome_boys.insert(name, age);
+
+    println!("insert name {:?}", handsome_boys);
+    println!("insert age is {}", age);
 }
