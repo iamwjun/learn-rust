@@ -43,4 +43,18 @@ fn main() {
     for (key, value) in &scores {
         println!("{}: {}", key, value);
     }
+
+    let v = scores.entry("Yellow".to_owned()).or_insert(5);
+
+    println!("v is {}", v);
+
+    let text = "hello world wonderful world";
+    let mut map =  HashMap::new();
+
+    for work in text.split_whitespace() {
+        let count  = map.entry(work).or_insert(0);
+        *count += 1;
+    }
+
+    println!("map is {:?}", map);
 }
