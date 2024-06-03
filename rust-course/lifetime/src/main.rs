@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 #[derive(Debug)]
 struct ImportantExcerpt<'a> {
     part: &'a str,
@@ -44,6 +46,11 @@ fn main() {
     println!("result is {}", first_word(&s));
 
     println!("long_life's mean is {}", long_life);
+
+    let x = String::from("x");
+    let y = String::from("y");
+    let ann = String::from("T");
+    println!("longest is {}", longest_with_an_announcement(&x, &y, ann))
 }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
@@ -68,3 +75,18 @@ fn first_word(s: &str) -> &str {
     &s[..]
 }
 
+fn longest_with_an_announcement<'a, T>(
+    x: &'a str,
+    y: &'a str,
+    ann: T
+) -> &'a str
+where 
+    T: Display
+{
+    println!("Announcement! {}", ann);
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
