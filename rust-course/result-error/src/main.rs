@@ -18,6 +18,13 @@ fn main() {
 
     let content = read_username_from_file();
     println!("content is {:#?}", content);
+
+    let mut f = match f {
+        // 打开文件成功，将file句柄赋值给f
+        Ok(file) => file,
+        // 打开文件失败，将错误返回(向上传播)
+        Err(e) => return Err(e),
+    };
 }
 
 fn read_username_from_file() -> Result<String, io::Error> {
